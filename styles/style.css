@@ -1,0 +1,386 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body {
+  background: #ffffff;
+  overflow: hidden;
+  background-color: #b3d8e4;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+ }
+ 
+ h2 {
+  animation: 1s blink linear infinite;
+  display: flex;
+  justify-content: center;
+ }
+ 
+ .birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+ }
+ 
+ .cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: .6s;
+ }
+ 
+ .happy {
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  margin: 30px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  transition: .1s;
+ }
+ 
+ .balloons {
+  position: absolute;
+ }
+ 
+ .balloonOne,
+ .balloonTwo,
+ .balloonThree,
+ .balloonFour {
+  position: absolute;
+  width: 85px;
+  height: 95px;
+  border-radius: 50%;
+ }
+ 
+ .balloonOne {
+  background-color: rgb(239, 71, 111, 0.7);
+  left: -10px;
+  top: 50px;
+ }
+ 
+ .balloonTwo {
+  background-color: rgb(6, 214, 160, 0.7);
+  left: 50px;
+  top: 20px;
+ }
+ 
+ .balloonThree {
+  background-color: rgb(255, 209, 102, 0.7);
+  left: 110px;
+  top: 50px;
+ }
+ 
+ .balloonFour {
+  background-color: rgb(17, 138, 178, 0.7);
+  left: 170px;
+  top: 20px;
+ }
+ 
+ .balloonOne:before,
+ .balloonTwo:before,
+ .balloonThree:before,
+ .balloonFour:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 155px;
+  background-color: #ffd166;
+  top: 95px;
+  left: 43px;
+ }
+ 
+ .balloonOne:after,
+ .balloonTwo:after,
+ .balloonThree:after,
+ .balloonFour:after {
+  content: "";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top: 94px;
+  left: 37px;
+ }
+ 
+ .balloonOne:after {
+  border-bottom: 10px solid #ef476f;
+ }
+ 
+ .balloonTwo:after {
+  border-bottom: 10px solid #06d6a0;
+ }
+ 
+ .balloonThree:after {
+  border-bottom: 10px solid #ffd166;
+ }
+ 
+ .balloonFour:after {
+  border-bottom: 10px solid #118ab2;
+ }
+ 
+ .cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+ }
+ 
+ p {
+  font-family: cursive;
+  margin: 15px 10px 10px 30px;
+  color: #333;
+ }
+ 
+ .name {
+  position: absolute;
+  left: 150px;
+  /* top: 200px; */
+  color: #333;
+  text-decoration: underline;
+ }
+ 
+ .back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 30px;
+  outline-color: #333;
+  outline-style: dashed;
+ }
+ 
+ .birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
+ }
+ 
+ .birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+ }
+ 
+ .birthdayCard:hover .happy {
+  visibility: hidden;
+ }
+ 
+ @keyframes blink {
+  0% {
+   color: white;
+  }
+ 
+  20% {
+   color: yellow;
+  }
+ 
+  40% {
+   color: greenyellow;
+  }
+ 
+  60% {
+   color: red;
+  }
+ 
+  80% {
+   color: hotpink;
+  }
+ 
+  100% {
+   color: blue;
+  }
+ }
+ footer{
+  font-size: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+ }
+ footer a{
+  color: white;
+ }
+.container {
+  color: rgba(55, 59, 65, 0.8);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+}
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+.merrywrap {
+  position: absolute;
+  right: 40px;
+  left: 40px;
+  bottom: 80px;
+  top: 40px;
+}
+.giftbox {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  bottom: 0;
+  z-index: 10;
+}
+.giftbox > div {
+  background: #F64747;
+  position: absolute;
+  box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.4);
+}
+.giftbox > div:after, .giftbox > div:before {
+  position: absolute;
+  content: "";
+  top: 0;
+}
+.giftbox:after {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  content: "Click Me!";
+  left: 0;
+  bottom: 0;
+  font-size: 24px;
+  text-align: center;
+  transform: rotate(-20deg);
+  transform-origin: 0 0;
+}
+.giftbox .cover {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 25%;
+  z-index: 2;
+}
+.giftbox .cover:before {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+  background: #2C3E50;
+}
+.giftbox .cover > div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+}
+.giftbox .cover > div:before, .giftbox .cover > div:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: inset 0 0 0 15px #2C3E50;
+  border-radius: 30px;
+  transform-origin: 50% 100%;
+}
+.giftbox .cover > div:before {
+  transform: translateX(-45%) skewY(40deg);
+}
+.giftbox .cover > div:after {
+  transform: translateX(45%) skewY(-40deg);
+}
+.giftbox .box {
+  right: 5%;
+  left: 5%;
+  height: 80%;
+  bottom: 0;
+}
+.giftbox .box:before {
+  width: 50px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2C3E50;
+}
+.giftbox .box:after {
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0);
+}
+.step-1 .giftbox {
+  animation: wobble 0.5s linear infinite forwards;
+}
+.step-1 .cover {
+  animation: wobble 0.5s linear infinite 5s forwards;
+}
+.step-1 .icons .row span {
+  opacity: 1;
+}
+.step-2 .giftbox:after {
+  opacity: 0;
+}
+.step-3 .giftbox, .step-4 .giftbox {
+  opacity: 0;
+  z-index: 1;
+}
+.step-3 .giftbox:after, .step-4 .giftbox:after {
+  opacity: 0;
+}
+.step-2 .giftbox .cover {
+  animation: flyUp 2s ease-in forwards;
+}
+.step-2 .giftbox .box {
+  animation: flyDown 2s ease-in 0.05s forwards;
+}
+@keyframes wobble {
+  25% {
+      transform: rotate(4deg);
+ }
+  75% {
+      transform: rotate(-2deg);
+ }
+}
+@keyframes flyUp {
+  75% {
+      opacity: 1;
+ }
+  100% {
+      transform: translateY(-1000px) rotate(20deg);
+      opacity: 0;
+ }
+}
+@keyframes flyDown {
+  75% {
+      opacity: 1;
+ }
+  100% {
+      transform: translateY(100%);
+      opacity: 0;
+ }
+ 
+}
